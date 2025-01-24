@@ -21,17 +21,22 @@ f.addEventListener("input", () => {
 
 });
 
-f.addEventListener("click", () => {
+f.addEventListener("click", (e) => {
+  e.preventDefault();
+
   const butt = f.querySelector("#submit-button");
 
   butt.addEventListener("click", () => {
     const nameInput = f.querySelector("#name-input");
     const charCounter = f.querySelector("#char-counter");
+    const resultField = f.querySelector("#result-field");
 
-    if (nameInput.value.length < 24 || nameInput.value.length === 24) {
-      alert(`Hello ${nameInput.value}`);
+    if (nameInput.value.length > 0) {
+      resultField.textContent = `Hello, ${nameInput.value}!`;
       nameInput.value = "";
       charCounter.textContent = `${nameInput.value.length}/24`;
-    } 
+    } else {
+      resultField.textContent = "Please enter a valid name.";
+    }
   });
 });
