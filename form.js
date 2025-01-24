@@ -21,8 +21,7 @@ f.addEventListener("input", () => {
 
 });
 
-f.addEventListener("click", (e) => {
-  e.preventDefault();
+f.addEventListener("click", () => {
 
   const butt = f.querySelector("#submit-button");
 
