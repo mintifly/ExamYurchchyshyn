@@ -16,6 +16,7 @@ f.addEventListener("input", () => {
   if (/[A-Z]/.test(nameInput.value)) {
     alert("Only lowercase letters!");
     nameInput.value = nameInput.value.replace(/[A-Z]/g, "");
+    charCounter.textContent = `${nameInput.value.length}/24`;
   }
 
 });
